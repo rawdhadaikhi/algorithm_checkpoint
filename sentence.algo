@@ -1,0 +1,30 @@
+ALGORITHM sentence_manipulation
+VAR
+   phrase : STRING;
+   nbVowels, nbWorld : INTEGER  ;
+   //STRING : vowals[] ={'a', 'i' ,'o' ,'e','u' ,'y'}
+   nbVowels:=0;
+   nbWorld :=0;
+   count :=0;
+
+BEGIN
+read(phrase);
+FOR i FROM 0 TO phrase.length STEP step  DO
+ count +=1;
+     IF (phrase[i]==' ') THEN
+         nbWorld =nbWorld +1;
+         count++;
+     END_IF
+     SWITCH (phrase[i]) DO
+         case  'a' : nbVowels +=1;
+         case  'o' : nbVowels +=1;
+         case  'y' : nbVowels +=1;
+         case  'e' : nbVowels +=1;
+         case  'i' : nbVowels +=1;
+         case  'u' : nbVowels +=1;
+         default : write('not a vowel',nbVowels);
+     END_SWITCH
+END_FOR
+write("length of sentence is :" ,count, "number of world is :" ,nbWorld, "number of vowels is :" ,nbVowels);
+
+END
